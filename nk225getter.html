@@ -1,0 +1,27 @@
+<html><head><title>nikkei 225 getter</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<table cellpadding="3" cellspacing="3" border="0"><tbody>
+<tr><th colspan="4" bgcolor="#0077ff">
+<font color="#ffffff">nikkei 225 getter</font>
+</th></tr>
+<tr><td bgcolor="#77ffff">registered date</td>
+<td bgcolor="#77ffff">nikkei 225</td>
+<td bgcolor="#77ffff">nikkei 225 future</td>
+<td bgcolor="#77ffff">uncompressed date</td></tr>
+{% for n in nk225s %}
+    <tr>
+    <td>{{ n.date }}</td>
+    <td align="right">{{ n.nk225 }}</td>
+    <td align="right">{{ n.nk225f }}</td>
+    <td>{{ n.updatedate }}</td>
+    </tr>
+{% endfor %}
+</tr></td></tbody></table>
+<br>
+<form action="/ss" method="post">
+<input type="submit" name="action" value="get">
+<input type="submit" name="action" value="refresh">
+</form>
+</body></html>
